@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>P2Pool</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <style>
+            body {
+                padding-top: 60px;
+            }
+            
+            line {
+                stroke: black;
+                stroke-width: 1;
+                shape-rendering: crispEdges;
+            }
+            
+            .plotline {
+                stroke-width: 1.4;
+                fill: none;
+            }
+            
+            text {
+                font-family: Sans-serif;
+                font-size: 12px;
+            }
+        </style>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/jquery.jqplot.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    </head>
+    <body>
+        <div style="width:996px;margin:0 auto;">
+            <div class="navbar  navbar-fixed-top">
+                <div class="navbar-inner ad7">
+                    <div class="container  ad7">
+                        <ul class="nav">
+                            <li>
+                                <a href="index.html">首页</a>
+                            </li>
+                            <li>
+                                <a href="list.html">排行榜</a>
+                            </li>
+                            <li>
+                                <a href="query.html">查询</a>
+                            </li>
+                            <li class="active">
+                                <a href="shares.html">Share explorer</a>
+                            </li>
+                            <li>
+                                <a href="blocks.html">Payouts</a>
+                            </li>
+                             <li>
+                                <a href="questions.html">常见问题</a>
+                            </li>
+                            <li>
+                                <a href="#">空白</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-header">
+                <h4>PPS和PPLNS分配模式的区别
+                    <small>
+                        &nbsp;常见问题
+                    </small>
+                </h4>
+            </div>
+            <p class="alert alert-info">
+                PPS模式即由矿池设定每M能产出的LTC数量，如果每天一个矿工的每M产出低于设定值，则矿池补贴（设定值-挖到的值），如果每天一个矿工的每M产出高设定值则矿池拿（挖到的值-设定值）。
+                故我们可以总结出，PPS即为拿固定工资，矿池为你设定工资额度，你工作不达标，矿池贴LTC给你，但是如果工作超标则矿池拿取超标的收益。PPS最大弊端在小算力体现不明显，但是大算力就是在
+                打工，收益较PPLNS肯定低。
+            </p>
+            <div class="page-header">
+                <h4>PPLNS分配模式常见问题
+                    <small>
+                        &nbsp;常见问题
+                    </small>
+                </h4>
+            </div>
+            <p>
+                为什么预计收益很低：预计收益为您挖到一块的收益，每天您肯定不止挖一个块啦。
+            </p>
+            <p>
+                为什么我十几个小时没有收益：PPLNS分配模式发送收益是中心池直接发送的，您挖到了不一定就当时发，中心池还需要统计每个人的贡献，然后一个个发，所以挖到块的时间和发送收益的时间会有间隔的。
+            </p>
+            <p>
+                为什么矿池没有显示我的速度：这个问题请先核对您的矿池地址是不是为我们的矿池地址（ltc.qcunc.com:8888），如果不是，当然就看不到速度啦。第二就是如果您是刚启动的，需要等待5分钟左右的系统更新，然后就会显示了。
+            </p>
+            <div class="page-header">
+                <h4>工具配置问题
+                    <small>
+                        &nbsp;常见问题
+                    </small>
+                </h4>
+            </div>
+            <p class="alert alert-error">
+                运行CGminer提示找不到OpenCL.dll这么办？！！！
+                <br/>
+            </p>
+            <p>
+                大侠请不必着急，我们来慢慢解决。第一请确认你的系统为win 7及以上系统，xp不支持，是的，你没有听错，xp这货不支持，您只有更换系统啦。
+            </p>
+            <p>
+                如果您的系统不是XP，第一条就可以掠过了，第二就请确认您是否安装了AMD APP SDK这个组件，如果没有这个组件就会爆出这个错误的。解决办法，百度一下AMD
+                APP SDK，根据系统版本选择下载安装即可。
+            </p>
+            <p class="alert alert-error">
+                运行CGminer本地速度和网站上面速度差别很大怎么办？！！！
+                <br/>
+                <p>
+                    大侠请还是不必着急，我们来慢慢解决。第一请确认正在运行CGminer程序界面里面有HW一行，看下数据是否为0或者低于10，如果高于10的话表示参数调试有误，这个HW直接影响收益的，所以这个数值过高的
+                    话肯定会影响速度的，解决方法我们提供两种，第一种就是您自行调试到合适的参数，第二种就是推荐您去淘宝寻找专业的调试商家进行调试。
+                </p>
+                <p class="alert alert-error">
+                怎么调试CGminer？！！！
+                <br/>
+                <p>
+                    我们这里提供调试CGminer的简单方法，首先，我们贴出运行参数，cgminer --scrypt -o stratum+tcp://ltc.qcunc.com:8888
+                    -u 钱包地址 -p 密码 --intensity 18，这里我们需要调节的参数 就是--intensity，我们简称为运行强度，因为每台机器的硬件配置环境是不同的，所以每个强度设置是不一样的，虽然这个强度设置值为1~20，但是不一定调到20就能达到无HW的稳定速度，所以我们需要一个个
+                    值去测试，知道CGminer界面的HW值一项为0或者低于10您就调试正常了，就可以放开挖了。
+                </p>
+                </div>
+				<div class="footer" id="footer">
+							<iframe width="996″ height="30″ frameborder="no" border="0″ marginwidth="0″ marginheight="0″ scrolling="no" allowtransparency="yes" src="foot.html"></iframe>
+						</div>
+            </div>
+            </body>
+        </html>
